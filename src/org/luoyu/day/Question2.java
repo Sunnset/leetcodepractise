@@ -44,8 +44,8 @@ public class Question2 {
             int y = l2 != null ? l2.val : 0;
             //将两个链表的值，进行相加，并加上进位数
             int sum = x + y + carry;
-            //计算进位数
-            carry = sum / 10;
+            //计算进位数,比较运算比除法运算执行指令要少一些
+            carry = sum > 9 ? 1 : 0;
             //计算两个数的和，此时排除超过10的请况（大于10，取余数）
             sum = sum % 10;
             //将求和数赋值给新链表的节点，
